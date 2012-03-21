@@ -297,4 +297,13 @@ class Money
 
         return (int) $units;
     }
+
+	public function __toString()
+	{
+		if ( function_exists('money_format') ) {
+			return sprintf('%s %s', $this->currency, money_format('!%.2n', $this->amount / 100));
+		} else {
+			return sprintf('%s %s', $this->currency, number_format($this->amount / 100, 2, ',', '.'));
+		}
+	}
 }
