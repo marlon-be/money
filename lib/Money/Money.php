@@ -305,6 +305,5 @@ class Money
 		} else {
 			return sprintf('%s %s', $this->currency, number_format($this->amount / 100, 2, ',', '.'));
 		}
-
 	}
 }
